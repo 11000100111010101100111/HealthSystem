@@ -1,0 +1,23 @@
+{
+  "id": "2704544",
+  "name": "vueproject",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14444479",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    },
+    {
+      "icon_id": "21231417",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "f490",
+      "unicode_decimal": 62608
+    }
+  ]
+}

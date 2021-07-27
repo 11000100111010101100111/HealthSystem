@@ -1,0 +1,15 @@
+#mysql
+spring:
+  datasource:
+    #mysql配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.xjh.springboot.pojo
+
+server:
+  port: 9000
