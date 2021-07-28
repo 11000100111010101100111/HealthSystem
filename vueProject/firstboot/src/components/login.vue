@@ -14,12 +14,12 @@
             </el-form-item>
             <!-- 密码 -->
             <el-form-item prop="password">
-                <el-input v-model="loginForm.password" prefix-icon="iconfont icon-mima" ></el-input>
+                <el-input v-model="loginForm.password" prefix-icon="iconfont icon-mima" type="password"></el-input>
             </el-form-item>
             <!-- 按钮 -->
              <el-form-item class="btns">
-                <el-button type="primary">提交</el-button>
-                <el-button type="info">重置</el-button>
+                <el-button type="primary" @click="login()">提交</el-button>
+                <el-button type="info" @click="resetLoginFrom()">重置</el-button>
             </el-form-item>
           </el-form>
       </div>
@@ -33,8 +33,8 @@ export default {
 
             //表单数据
             loginForm: {
-                username: "username",
-                password: "password"
+                username: "user",
+                password: "123456"
             },
             //验证规则
             loginRules:{
@@ -47,6 +47,34 @@ export default {
                 { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
               ],
             },
+        }
+    },
+    methods: {
+        resetLoginFrom(){
+            console.log("重置表单...");
+            //表单重置
+            this.$refs.loginFromRef.resetFields();
+        },
+        login(){
+            //表单提交
+            console.log("登录...")
+            this.$refs.loginFromRef.validate(async valid =>{
+                //判断验证输入是否成功，TRUE、false
+                console.log(valid);
+                if(!valid){
+                    return;
+                }
+
+                // 访问后端接口
+                const {data:res} = await this.$http.post("test");
+                console.log(res);
+                if(res == "ok1"){
+                    //返回结果为成功！
+                    this.$message.success("操作成功！");
+                }else{
+                    alert("登录失败了！");
+                }
+            });
         }
     }
 }
