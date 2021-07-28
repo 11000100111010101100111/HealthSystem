@@ -8,7 +8,7 @@ spring:
     password: root
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mappers/*.xml
   type-aliases-package: com.xjh.springboot.pojo
 
 server:

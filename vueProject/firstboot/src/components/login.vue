@@ -33,7 +33,7 @@ export default {
 
             //表单数据
             loginForm: {
-                username: "user",
+                username: "四原色",
                 password: "123456"
             },
             //验证规则
@@ -55,9 +55,13 @@ export default {
             //表单重置
             this.$refs.loginFromRef.resetFields();
         },
+
+        //处理登录业务，
         login(){
             //表单提交
             console.log("登录...")
+
+            //先完成验证：验证验证校验规则，
             this.$refs.loginFromRef.validate(async valid =>{
                 //判断验证输入是否成功，TRUE、false
                 console.log(valid);
@@ -66,12 +70,18 @@ export default {
                 }
 
                 // 访问后端接口
-                const {data:res} = await this.$http.post("test");
+                const {data:res} = await this.$http.post("login",this.loginForm);//异步访问后台
                 console.log(res);
-                if(res == "ok1"){
+                if(res.flage == "ok"){
+
                     //返回结果为成功！
                     this.$message.success("操作成功！");
+
+                    //跳转页面到主页,页面路由跳转
+                    this.$router.push({path:"/home"});
+                    console.log(res.user);
                 }else{
+                    //错误提示
                     alert("登录失败了！");
                 }
             });
