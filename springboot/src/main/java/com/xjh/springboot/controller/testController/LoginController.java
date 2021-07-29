@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
-
+/*
+    @Auther:四原色
+    @Time:2021-07-28 18:25:00
+*/
 @RestController
 public class LoginController {
     //依赖注入

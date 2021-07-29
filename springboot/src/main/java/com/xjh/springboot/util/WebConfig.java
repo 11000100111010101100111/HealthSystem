@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 //全局配置类
 /*
-    @Auto:肖家海
+    @Auto:四原色
     @Time:2021-07-27 10:37:00
 
     配置跨域请求：
