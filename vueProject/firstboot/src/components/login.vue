@@ -4,7 +4,7 @@
     <div class="login_box">
       <!-- logo区域 -->
       <div class="avatar_box">
-        <img src="../assets/logo.png" alt />
+        <img src="../assets/login-logo.png" alt />
       </div>
       <!-- 表单区域 -->
       <el-form
@@ -134,7 +134,7 @@ export default {
   height: 130px;
   border-radius: 50%;
   padding: 5px;
-  box-shadow: 0 0 12px #ddd;
+  box-shadow: 0 0 12px rgb(42, 186, 165);
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);

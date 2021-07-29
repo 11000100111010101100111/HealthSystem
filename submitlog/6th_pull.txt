@@ -1,0 +1,68 @@
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/myFile/springbootDemos/HealthSystem/.git/
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git reset --hard FETCH_HEAD
+fatal: ambiguous argument 'FETCH_HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull
+remote: Enumerating objects: 65, done.
+remote: Counting objects: 100% (65/65), done.
+remote: Compressing objects: 100% (28/28), done.
+remote: Total 41 (delta 8), reused 40 (delta 7), pack-reused 0
+Unpacking objects: 100% (41/41), 214.22 KiB | 31.00 KiB/s, done.
+From https://github.com/11000100111010101100111/HealthSystem
+   b73020f..ff40a10  master     -> origin/master
+Updating b73020f..ff40a10
+Fast-forward
+ database/database.html                             |  49 ++++++++
+ database/database0000.JPG                          | Bin 0 -> 4210 bytes
+ database/database0001.JPG                          | Bin 0 -> 2483 bytes
+ database/db.PNG                                    | Bin 0 -> 3194 bytes
+ database/mainmenu(data).PNG                        | Bin 0 -> 26116 bytes
+ database/mainmenu.PNG                              | Bin 0 -> 64264 bytes
+ database/sasyuser(data).PNG                        | Bin 0 -> 20974 bytes
+ database/sasyuser.PNG                              | Bin 0 -> 39219 bytes
+ database/submenu(data).PNG                         | Bin 0 -> 28873 bytes
+ database/submenu.PNG                               | Bin 0 -> 46357 bytes
+ .../controller/testController/LoginController.java |   5 +-
+ .../controller/testController/MenuController.java  |  35 ++++++
+ .../controller/testController/TestCon.java         |   5 +-
+ .../main/java/com/xjh/springboot/dao/MenuDao.java  |  15 +++
+ .../java/com/xjh/springboot/pojo/MainMenu.java     |  75 +++++++++++
+ .../main/java/com/xjh/springboot/pojo/SubMenu.java |  68 ++++++++++
+ .../java/com/xjh/springboot/util/WebConfig.java    |   2 +-
+ springboot/src/main/resources/application.yml      |   2 +-
+ .../src/main/resources/mappers/MenuMapper.xml      |  21 ++++
+ vueProject/firstboot/src/components/Home.vue       | 139 ++++++++++++++++++++-
+ 20 files changed, 410 insertions(+), 6 deletions(-)
+ create mode 100644 database/database.html
+ create mode 100644 database/database0000.JPG
+ create mode 100644 database/database0001.JPG
+ create mode 100644 database/db.PNG
+ create mode 100644 database/mainmenu(data).PNG
+ create mode 100644 database/mainmenu.PNG
+ create mode 100644 database/sasyuser(data).PNG
+ create mode 100644 database/sasyuser.PNG
+ create mode 100644 database/submenu(data).PNG
+ create mode 100644 database/submenu.PNG
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/controller/testController/MenuController.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/dao/MenuDao.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/pojo/MainMenu.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/pojo/SubMenu.java
+ create mode 100644 springboot/src/main/resources/mappers/MenuMapper.xml
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ ^C
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$

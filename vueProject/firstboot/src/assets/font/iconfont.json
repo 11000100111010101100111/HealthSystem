@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "8311060",
+      "name": "健康",
+      "font_class": "jiankang",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "18171527",
+      "name": "运动",
+      "font_class": "yundong2",
+      "unicode": "ef41",
+      "unicode_decimal": 61249
+    },
+    {
+      "icon_id": "20243348",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "20922886",
+      "name": "运动",
+      "font_class": "yundong1",
+      "unicode": "e802",
+      "unicode_decimal": 59394
+    },
+    {
+      "icon_id": "2705599",
+      "name": "运动",
+      "font_class": "yundong",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "15136483",
+      "name": "一级菜单",
+      "font_class": "Data_center",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "16288101",
+      "name": "面性暴雨",
+      "font_class": "mianxingbaoyu",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
       "icon_id": "14444479",
       "name": "用户",
       "font_class": "yonghu",
