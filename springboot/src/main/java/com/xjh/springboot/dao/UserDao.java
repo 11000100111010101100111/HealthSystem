@@ -21,4 +21,7 @@ public interface UserDao {
     public List<User> getAllUser(@Param("username")String username,@Param("pageStart") int pageStart,@Param("pageSize") int pageSize);
     //分页查询获取全部用户数目
     public Integer getAllUserNums(@Param("username")String username);
+
+    //修改用户状态
+    public int modifyUserState(@Param("id") Integer id,@Param("state") Boolean state);
 }

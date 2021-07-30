@@ -1,0 +1,48 @@
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/myFile/springbootDemos/HealthSystem/.git/
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': Empty reply from server
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull origin master
+remote: Enumerating objects: 45, done.
+remote: Counting objects: 100% (45/45), done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 31 (delta 8), reused 29 (delta 6), pack-reused 0
+Unpacking objects: 100% (31/31), 6.02 KiB | 4.00 KiB/s, done.
+From https://github.com/11000100111010101100111/HealthSystem
+ * branch            master     -> FETCH_HEAD
+   003119d..f870f43  master     -> origin/master
+Updating 003119d..f870f43
+Fast-forward
+ springboot/src/main/resources/application.yml      |  2 +-
+ submitlog/5thpush.txt                              | 84 ++++++++++++++++++++++
+ submitlog/7th_push.txt                             | 34 +++++++++
+ submitlog/7thpull.txt                              | 40 +++++++++++
+ vueProject/firstboot/src/components/Home.vue       | 28 ++++++--
+ vueProject/firstboot/src/components/Welcome.vue    | 15 ++++
+ .../firstboot/src/components/admin/Goods.vue       | 15 ++++
+ .../firstboot/src/components/admin/Rights.vue      | 15 ++++
+ .../firstboot/src/components/admin/Sport.vue       | 15 ++++
+ .../firstboot/src/components/admin/UserList.vue    | 15 ++++
+ .../firstboot/src/components/use/Calories.vue      | 15 ++++
+ vueProject/firstboot/src/components/use/Food.vue   | 13 ++++
+ .../firstboot/src/components/use/Introduction.vue  | 15 ++++
+ vueProject/firstboot/src/router/index.js           | 52 +++++++++++++-
+ 14 files changed, 351 insertions(+), 7 deletions(-)
+ create mode 100644 submitlog/5thpush.txt
+ create mode 100644 submitlog/7th_push.txt
+ create mode 100644 submitlog/7thpull.txt
+ create mode 100644 vueProject/firstboot/src/components/Welcome.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/Goods.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/Rights.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/Sport.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/UserList.vue
+ create mode 100644 vueProject/firstboot/src/components/use/Calories.vue
+ create mode 100644 vueProject/firstboot/src/components/use/Food.vue
+ create mode 100644 vueProject/firstboot/src/components/use/Introduction.vue
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)

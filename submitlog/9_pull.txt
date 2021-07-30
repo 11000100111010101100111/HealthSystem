@@ -1,0 +1,37 @@
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/myFile/springbootDemos/HealthSystem/.git/
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': Failed to connect to github.com port 443: Timed out
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull
+remote: Enumerating objects: 58, done.
+remote: Counting objects: 100% (58/58), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 32 (delta 8), reused 32 (delta 8), pack-reused 0
+Unpacking objects: 100% (32/32), 7.42 KiB | 4.00 KiB/s, done.
+From https://github.com/11000100111010101100111/HealthSystem
+   f870f43..f222133  master     -> origin/master
+Updating f870f43..f222133
+Fast-forward
+ .../{testController => }/LoginController.java      |   2 +-
+ .../{testController => }/MenuController.java       |   6 +-
+ .../xjh/springboot/controller/UserController.java  |  41 ++++++++
+ .../main/java/com/xjh/springboot/dao/UserDao.java  |  10 +-
+ .../java/com/xjh/springboot/pojo/QueryInfo.java    |  55 +++++++++++
+ .../src/main/resources/mappers/UserMapping.xml     |  22 +++++
+ submitlog/8th_push.txt                             |  65 +++++++++++++
+ vueProject/firstboot/src/assets/css/global.css     |   5 +
+ .../firstboot/src/components/admin/UserList.vue    | 106 ++++++++++++++++++++-
+ 9 files changed, 306 insertions(+), 6 deletions(-)
+ rename springboot/src/main/java/com/xjh/springboot/controller/{testController => }/LoginController.java (95%)
+ rename springboot/src/main/java/com/xjh/springboot/controller/{testController => }/MenuController.java (92%)
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/controller/UserController.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/pojo/QueryInfo.java
+ create mode 100644 submitlog/8th_push.txt
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)

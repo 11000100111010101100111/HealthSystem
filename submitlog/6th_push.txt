@@ -1,0 +1,81 @@
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/myFile/springbootDemos/HealthSystem/.git/
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   springboot/src/main/resources/application.yml
+        modified:   vueProject/firstboot/src/assets/font/demo_index.html
+        modified:   vueProject/firstboot/src/assets/font/iconfont.css
+        modified:   vueProject/firstboot/src/assets/font/iconfont.js
+        modified:   vueProject/firstboot/src/assets/font/iconfont.json
+        modified:   vueProject/firstboot/src/assets/font/iconfont.ttf
+        modified:   vueProject/firstboot/src/assets/font/iconfont.woff
+        modified:   vueProject/firstboot/src/assets/font/iconfont.woff2
+        modified:   vueProject/firstboot/src/assets/logo.png
+        modified:   vueProject/firstboot/src/components/Home.vue
+        modified:   vueProject/firstboot/src/components/login.vue
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        submitlog/
+        vueProject/firstboot/src/assets/login-logo.png
+        vueProject/firstboot/src/assets/vue-logo.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git add .
+warning: LF will be replaced by CRLF in vueProject/firstboot/src/assets/font/demo_index.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vueProject/firstboot/src/assets/font/iconfont.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vueProject/firstboot/src/assets/font/iconfont.json.
+The file will have its original line endings in your working directory
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git commit -m "HeathSystem_6thcommit_v1.0.5"
+[master 003119d] HeathSystem_6thcommit_v1.0.5
+ 14 files changed, 483 insertions(+), 169 deletions(-)
+ create mode 100644 submitlog/6th_pull.txt
+ rewrite vueProject/firstboot/src/assets/font/iconfont.js (100%)
+ rewrite vueProject/firstboot/src/assets/font/iconfont.woff (83%)
+ rewrite vueProject/firstboot/src/assets/font/iconfont.woff2 (100%)
+ create mode 100644 vueProject/firstboot/src/assets/login-logo.png
+ rewrite vueProject/firstboot/src/assets/logo.png (99%)
+ copy vueProject/firstboot/src/assets/{logo.png => vue-logo.png} (100%)
+ rewrite vueProject/firstboot/src/components/Home.vue (61%)
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': Failed to connect to github.com port 443: Timed out
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': Failed to connect to github.com port 443: Timed out
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': Failed to connect to github.com port 443: Timed out
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git push
+Enumerating objects: 48, done.
+Counting objects: 100% (48/48), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (26/26), 40.27 KiB | 3.36 MiB/s, done.
+Total 26 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+To https://github.com/11000100111010101100111/HealthSystem.git
+   ff40a10..003119d  master -> master
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$

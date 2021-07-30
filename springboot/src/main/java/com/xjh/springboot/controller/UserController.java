@@ -5,6 +5,7 @@ import com.xjh.springboot.dao.UserDao;
 import com.xjh.springboot.pojo.QueryInfo;
 import com.xjh.springboot.pojo.User;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -32,10 +33,16 @@ public class UserController {
         List<User> userList = userDao.getAllUser("%"+queryInfo.getQuery()+"%",pageStart, queryInfo.getPageSize());
 
         HashMap<String, Object> res = new HashMap<String, Object>();
-        res.put("unambers",userCount);
+        res.put("userCount",userCount);
         res.put("data",userList);
-
+//        System.out.println("用户数："+userCount);
         String val = JSON.toJSONString(res);
         return val;
+    }
+    @RequestMapping("/changeState")
+    public String modifyUserState(@RequestParam("id")Integer id,@RequestParam("state") Boolean state){
+
+        int res = userDao.modifyUserState(id,state);
+        return res>0?"succeed":"error";
     }
 }
