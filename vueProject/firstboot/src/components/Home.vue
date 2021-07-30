@@ -26,6 +26,8 @@
           unique-opened
           :collapse="isCollapse"
           :collapse-transition="false"
+          :router="true"
+          :default-active="activePath"
         >
           <!-- 一级菜单 -->
           <el-submenu
@@ -40,9 +42,10 @@
 
             <!--二级菜单 -->
             <el-menu-item
-              :index="item.id + '-' + it.id"
+              :index="it.path"
               v-for="it in item.sList"
               :key="it.id"
+              @click="setPath(it.path)"
             >
               <template slot="title">
                 <i class="iconfont icon-yundong1"></i>
@@ -54,7 +57,12 @@
       </el-aside>
 
       <!-- 右边信息面板 -->
-      <el-main> Main </el-main>
+      <el-main> 
+        <router-view>
+          
+        </router-view>    
+      </el-main>
+
     </el-container>
   </el-container>
 </template>
@@ -66,12 +74,15 @@ export default {
       // 返回一级菜单列表
       menuList: [],
       isCollapse: true, //伸缩属性
+      activePath: '/welcome',//默认路径路由
     };
   },
   // 等同onload(),页面加载时发生
   created() {
     //查询menulist 列表
     this.getMenuList();
+    // 拉取活动路径
+    this.activePath = window.sessionStorage.getItem("activePath");
   },
   methods: {
     logout() {
@@ -100,6 +111,13 @@ export default {
     showBar() {
       this.isCollapse = !this.isCollapse;
     },
+    // 更改路由路径,保存当前路径
+    setPath(path){
+      // 将路径暂存到session
+      window.sessionStorage.setItem("activePath",path);
+
+      this.activePath = path;
+    },
   },
 };
 </script>
@@ -118,6 +136,8 @@ export default {
   justify-content: space-between;
 
   padding-left: 0%;
+  /* 元素水平、垂直居中 */
+  align-items: center;
 
   font-size: 20px;
   align-content: center;
@@ -133,9 +153,9 @@ export default {
   position: relative;
   text-align: center;
   display: inline-block;
-  height: 50%;
+  /* height: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
   color: #fff;
   /* background-color: darkcyan; */
 }

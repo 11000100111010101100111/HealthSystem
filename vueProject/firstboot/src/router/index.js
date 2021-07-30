@@ -3,6 +3,14 @@ import VueRouter from 'vue-router'
 // 引入login组件
 import Login from '../components/login.vue'
 import Home from '../components/Home.vue'
+import Welcome from '../components/Welcome.vue'
+import UserList from '../components/admin/UserList.vue'
+import Rights from '../components/admin/Rights.vue'
+import Sport from '../components/admin/Sport.vue'
+import Goods from '../components/admin/Goods.vue'
+import Introduction from '../components/use/Introduction.vue'
+import Calories from '../components/use/Calories.vue'
+import Food from '../components/use/Food.vue'
 
 Vue.use(VueRouter)
 
@@ -19,8 +27,48 @@ const routes = [
   },
   {
     path: "/home",
-    component: Home
-
+    component: Home,
+    redirect: "/welcome",
+    children: [
+      //home页面内的子组件构成菜单主体，使用路由进行导航
+      {
+        //主页
+        path:"/home",
+        component:Welcome
+      },
+      {
+        //用户列表组件
+        path:"/user",
+        component:UserList
+      },
+      {
+        //权限修改组件
+        path:"/rights",
+        component:Rights
+      },
+      {
+        //运动模块组件
+        path:"/sport",
+        component:Sport
+      },
+      {
+        //商品模块组件
+        path:"/goods",
+        component:Goods
+      },
+      {
+        path:"/introduction",
+        component:Introduction
+      },
+      {
+        path:"/calories",
+        component:Calories
+      },
+      {
+        path:"/food",
+        component:Food
+      },
+    ]
   },
 ]
 
