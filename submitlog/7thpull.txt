@@ -1,0 +1,40 @@
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/xjhProjects/heathSystem/HealthSystem/.git/
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git pull origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': Failed to connect to github.com port 443: Timed out
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git pull origin master
+remote: Enumerating objects: 48, done.
+remote: Counting objects: 100% (48/48), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 26 (delta 7), reused 25 (delta 6), pack-reused 0
+Unpacking objects: 100% (26/26), 40.25 KiB | 31.00 KiB/s, done.
+From https://github.com/11000100111010101100111/HealthSystem
+ * branch            master     -> FETCH_HEAD
+   ff40a10..003119d  master     -> origin/master
+Updating ff40a10..003119d
+Fast-forward
+ springboot/src/main/resources/application.yml      |   2 +-
+ submitlog/6th_pull.txt                             |  68 ++++++++
+ .../firstboot/src/assets/font/demo_index.html      | 167 ++++++++++++++++++-
+ vueProject/firstboot/src/assets/font/iconfont.css  |  34 +++-
+ vueProject/firstboot/src/assets/font/iconfont.js   |   2 +-
+ vueProject/firstboot/src/assets/font/iconfont.json |  49 ++++++
+ vueProject/firstboot/src/assets/font/iconfont.ttf  | Bin 2804 -> 7860 bytes
+ vueProject/firstboot/src/assets/font/iconfont.woff | Bin 1768 -> 5124 bytes
+ .../firstboot/src/assets/font/iconfont.woff2       | Bin 1384 -> 4420 bytes
+ vueProject/firstboot/src/assets/login-logo.png     | Bin 0 -> 3329 bytes
+ vueProject/firstboot/src/assets/logo.png           | Bin 6849 -> 6687 bytes
+ vueProject/firstboot/src/assets/vue-logo.png       | Bin 0 -> 6849 bytes
+ vueProject/firstboot/src/components/Home.vue       | 184 +++++++++++----------
+ vueProject/firstboot/src/components/login.vue      |   4 +-
+ 14 files changed, 412 insertions(+), 98 deletions(-)
+ create mode 100644 submitlog/6th_pull.txt
+ create mode 100644 vueProject/firstboot/src/assets/login-logo.png
+ create mode 100644 vueProject/firstboot/src/assets/vue-logo.png
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)

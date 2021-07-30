@@ -1,0 +1,84 @@
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/xjhProjects/heathSystem/HealthSystem/.git/
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   springboot/src/main/java/com/xjh/springboot/controller/testController/MenuController.java
+        new file:   springboot/src/main/java/com/xjh/springboot/dao/MenuDao.java
+        new file:   springboot/src/main/java/com/xjh/springboot/pojo/MainMenu.java
+        new file:   springboot/src/main/java/com/xjh/springboot/pojo/SubMenu.java
+        new file:   springboot/src/main/resources/mappers/MenuMapper.xml
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   springboot/src/main/java/com/xjh/springboot/controller/testController/LoginController.java
+        modified:   springboot/src/main/java/com/xjh/springboot/controller/testController/MenuController.java
+        modified:   springboot/src/main/java/com/xjh/springboot/controller/testController/TestCon.java
+        modified:   springboot/src/main/java/com/xjh/springboot/dao/MenuDao.java
+        modified:   springboot/src/main/java/com/xjh/springboot/pojo/MainMenu.java
+        modified:   springboot/src/main/java/com/xjh/springboot/pojo/SubMenu.java
+        modified:   springboot/src/main/java/com/xjh/springboot/util/WebConfig.java
+        modified:   springboot/src/main/resources/application.yml
+        modified:   vueProject/firstboot/src/components/Home.vue
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        database/
+
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push origin master
+Everything up-to-date
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git add .
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git commit -m "5thCommit_HeathSystem_v1.0.5"
+[master ff40a10] 5thCommit_HeathSystem_v1.0.5
+ 20 files changed, 410 insertions(+), 6 deletions(-)
+ create mode 100644 database/database.html
+ create mode 100644 database/database0000.JPG
+ create mode 100644 database/database0001.JPG
+ create mode 100644 database/db.PNG
+ create mode 100644 database/mainmenu(data).PNG
+ create mode 100644 database/mainmenu.PNG
+ create mode 100644 database/sasyuser(data).PNG
+ create mode 100644 database/sasyuser.PNG
+ create mode 100644 database/submenu(data).PNG
+ create mode 100644 database/submenu.PNG
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/controller/testController/MenuController.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/dao/MenuDao.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/pojo/MainMenu.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/pojo/SubMenu.java
+ create mode 100644 springboot/src/main/resources/mappers/MenuMapper.xml
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push origin master
+Enumerating objects: 65, done.
+Counting objects: 100% (65/65), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (41/41), 214.24 KiB | 10.71 MiB/s, done.
+Total 41 (delta 8), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (8/8), completed with 7 local objects.
+To https://github.com/11000100111010101100111/HealthSystem.git
+   b73020f..ff40a10  master -> master
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ ^C
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$
