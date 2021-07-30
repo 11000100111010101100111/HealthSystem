@@ -1,4 +1,4 @@
-package com.xjh.springboot.controller.testController;
+package com.xjh.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.xjh.springboot.dao.MenuDao;
@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
-
+/*@Author 四原色
+ * 2021-07-29 15:45:00
+ */
 @RestController
 public class MenuController {
     @Resource(name = "menuDao")

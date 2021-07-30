@@ -1,4 +1,4 @@
-package com.xjh.springboot.controller.testController;
+package com.xjh.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.xjh.springboot.dao.UserDao;

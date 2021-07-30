@@ -1,0 +1,65 @@
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/xjhProjects/heathSystem/HealthSystem/.git/
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   springboot/src/main/resources/application.yml
+        modified:   vueProject/firstboot/src/components/Home.vue
+        modified:   vueProject/firstboot/src/router/index.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Submitlog/7th_push.txt
+        vueProject/firstboot/src/components/Welcome.vue
+        vueProject/firstboot/src/components/admin/
+        vueProject/firstboot/src/components/use/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git add .
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push origin master
+Everything up-to-date
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git commit -m "7thHeathSystemCommit_addComponentsForMenu_v1.0.6"
+[master f870f43] 7thHeathSystemCommit_addComponentsForMenu_v1.0.6
+ 12 files changed, 227 insertions(+), 7 deletions(-)
+ create mode 100644 submitlog/7th_push.txt
+ create mode 100644 vueProject/firstboot/src/components/Welcome.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/Goods.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/Rights.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/Sport.vue
+ create mode 100644 vueProject/firstboot/src/components/admin/UserList.vue
+ create mode 100644 vueProject/firstboot/src/components/use/Calories.vue
+ create mode 100644 vueProject/firstboot/src/components/use/Food.vue
+ create mode 100644 vueProject/firstboot/src/components/use/Introduction.vue
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push
+Enumerating objects: 40, done.
+Counting objects: 100% (40/40), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (26/26), 4.20 KiB | 1.05 MiB/s, done.
+Total 26 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To https://github.com/11000100111010101100111/HealthSystem.git
+   b8c3bb1..f870f43  master -> master
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$

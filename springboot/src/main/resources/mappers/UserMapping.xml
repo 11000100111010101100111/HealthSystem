@@ -5,4 +5,26 @@
     <select id="getUserByMessage" resultType="com.xjh.springboot.pojo.User">
         SELECT * FROM `easyuser` where `username` = #{username} and `password` = #{password} AND `state` = 1
     </select>
+
+
+<!--    /*@Author 四原色-->
+<!--    * 2021-07-30 19:55:00-->
+<!--    */-->
+<!--    //分页查询获取全部用户信息-->
+<!--    public List<User> getAllUser(@Param("username")String username,@Param("pageStart") int pageStart,@Param("pageSize") int pageSize);-->
+    <select id="getAllUser" resultType="com.xjh.springboot.pojo.User">
+        SELECT * FROM `easyuser`
+        <if test="username != null">
+            WHERE `username` LIKE #{username}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+<!--    //分页查询获取全部用户数目-->
+<!--    public int getAllUserNums(@Param("username")String username,@Param("pageStart") int pageStart,@Param("pageSize") int pageSize);-->
+    <select id="getAllUserNums" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM `easyuser`
+        <if test="username != null " >
+            WHERE `username` LIKE #{username}
+        </if>
+    </select>
 </mapper>

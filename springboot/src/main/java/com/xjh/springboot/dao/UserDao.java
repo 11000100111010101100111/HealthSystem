@@ -5,12 +5,20 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+/*@Author 四原色
+ * 2021-07-30 19:55:00
+ */
 @Repository
 public interface UserDao {
 
 //    查询语句
 //    SELECT count(id) FROM `easyuser` where `username` = "四原色" and `password` = "123456" AND `state` = 1
+//    获取当前登录用户账号密码
     public User getUserByMessage(@Param("username") String username, @Param("password") String password);
 
-
+    //分页查询获取全部用户信息
+    public List<User> getAllUser(@Param("username")String username,@Param("pageStart") int pageStart,@Param("pageSize") int pageSize);
+    //分页查询获取全部用户数目
+    public Integer getAllUserNums(@Param("username")String username);
 }
