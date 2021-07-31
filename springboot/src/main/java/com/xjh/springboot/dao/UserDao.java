@@ -24,4 +24,16 @@ public interface UserDao {
 
     //修改用户状态
     public int modifyUserState(@Param("id") Integer id,@Param("state") Boolean state);
+
+    //添加用户
+    public int addUser(User user);
+
+    //删除用户,根据用户id删除指定用户
+    public int removeUser(int id);
+
+    //修改用户信息
+    //根据id获取用户信息
+    public User getUserById(int id);
+    //更新用户信息
+    public int updateUser(User user);
 }

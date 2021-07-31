@@ -4,9 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.xjh.springboot.dao.UserDao;
 import com.xjh.springboot.pojo.QueryInfo;
 import com.xjh.springboot.pojo.User;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -37,6 +35,7 @@ public class UserController {
         res.put("data",userList);
 //        System.out.println("用户数："+userCount);
         String val = JSON.toJSONString(res);
+
         return val;
     }
     @RequestMapping("/changeState")
@@ -44,5 +43,50 @@ public class UserController {
 
         int res = userDao.modifyUserState(id,state);
         return res>0?"succeed":"error";
+    }
+
+    @RequestMapping("/addUser")
+    public String addUser(@RequestBody User user){
+        System.out.println("请求添加用户："+user.toString());
+
+        user.setRole("普通用户");
+        user.setState(false);
+        int i = userDao.addUser(user);
+        String str = i>0 ? "succeed":"error";
+
+        System.out.println("添加"+(i>0?"成功！":"失败！"));
+        return str;
+    }
+
+    @RequestMapping("/removeUser")
+    public String removeUser(int id){
+//        int res = userDao.removeUser(id);
+//        String str = res>0?"succeed":"error";
+//        return str;
+        return userDao.removeUser(id)>0?"succeed":"error";
+    }
+
+    @RequestMapping("/selectUser")
+    public String selectUser(int id){
+        HashMap<String,Object> list = new HashMap<String,Object>();
+        try{
+            User user = userDao.getUserById(id);
+            list.put("user",user);
+            list.put("flage","succeed");
+        }
+        catch (Exception e){
+            list.put("flage","succeed");
+        }
+        return JSON.toJSONString(list);
+    }
+    @RequestMapping("/modifyUser")
+    public String modifyUser(@RequestBody User user){
+        int flage =0;
+        try {
+            flage = userDao.updateUser(user);
+        }catch (Exception e){
+            flage = -1;
+        }
+        return flage>0?"succeed":"error";
     }
 }

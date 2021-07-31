@@ -65,4 +65,11 @@ public class SubMenu {
                 ", path='" + path + '\'' +
                 '}';
     }
+
+    public static void main(String[] args) {
+        String s = "cdacadccc";
+        StringBuilder sd =new StringBuilder("");
+        StringBuffer sb = new StringBuffer("");
+        System.out.println(s.replaceAll("[a-z]","A"));
+    }
 }

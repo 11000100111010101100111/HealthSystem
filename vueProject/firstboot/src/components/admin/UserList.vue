@@ -31,7 +31,9 @@
 
         <el-col :span="4" @click="addDialogVisiable = true">
           <!-- 搜索按钮 -->
-          <el-button type="primary">添加用户</el-button>
+          <el-button type="primary" @click="addDialogVisible = true"
+            >添加用户</el-button
+          >
         </el-col>
       </el-row>
 
@@ -69,12 +71,14 @@
               type="primary"
               icon="el-icon-edit"
               size="mini"
+              @click="selectUser(scope.row.id)"
             ></el-button>
             <!-- 删除 -->
             <el-button
               type="danger"
               icon="el-icon-delete"
               size="mini"
+              @click="removeUser(scope.row.id)"
             ></el-button>
             <!-- 权限 -->
             <el-tooltip
@@ -113,6 +117,37 @@
         </el-pagination>
       </div>
     </el-card>
+
+    <el-dialog
+      title="添加用户"
+      :visible.sync="addDialogVisible"
+      width="50%"
+      @close="addDialogClose"
+    >
+      <el-form
+        :model="addForm"
+        :rules="addFormRules"
+        ref="addFormRef"
+        label-width="70px"
+      >
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model="addForm.username"></el-input>
+        </el-form-item>
+
+        <el-form-item label="密  码" prop="password">
+          <el-input v-model="addForm.password" type="password"></el-input>
+        </el-form-item>
+
+        <el-form-item label="邮  箱" prop="email">
+          <el-input v-model="addForm.email"></el-input>
+        </el-form-item>
+      </el-form>
+
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="addDialogVisible = false">取消</el-button>
+        <el-button type="primary" @click="addUser">确定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -132,6 +167,28 @@ export default {
       // 用户列表
       userList: [],
       total: 0, //总记录数
+      addDialogVisible: false, //添加用户的对话框显示状态
+      //用户信息
+      addForm: {
+        username: "",
+        password: "",
+        email: "",
+      },
+      //表单验证
+      addFormRules: {
+        username: [
+          { required: true, message: "请输入您的名称...", tigger: "blur" },
+          { min: 2, max: 8, message: "名称由2到8个字符组成", tigger: "blur" },
+        ],
+        password: [
+          { required: true, message: "请输入您的密码...", tigger: "blur" },
+          { min: 6, max: 15, message: "名称由6到15个字符组成", tigger: "blur" },
+        ],
+        email: [
+          { required: true, message: "请输入您的邮箱...", tigger: "blur" },
+          { min: 5, max: 15, message: "请输入正确的邮箱...", tigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
@@ -166,6 +223,56 @@ export default {
         return this.$message.error("修改失败！");
       }
       this.$message.success("操作成功！账号状态已修改！");
+    },
+    addUser() {
+      this.$refs.addFormRef.validate(async (valid) => {
+        if (!valid) {
+          return this.$message.error("输入内容为空或输入不完整！无法提交！");
+        }
+        const { data: res } = await this.$http.post("addUser", this.addForm);
+        if (res != "succeed") {
+          return this.$message.error("连接错误！添加失败！");
+        }
+        this.$message.success("用户添加成功！");
+
+        this.addDialogVisible = false;
+        //刷新用户列表
+        this.getUserList();
+      });
+    },
+    //监听添加用户的操作，
+    addDialogClose() {
+      this.$refs.addFormRef.resetFields();
+    },
+    //删除用户
+    async removeUser(id) {
+      const resoult = await this.$confirm(
+        "将永久删除用户信息，是否继续？",
+        "警告",
+        {
+          confirmButtonTest: "确定",
+          cancelButtonTest: "取消",
+          type: "warning",
+        }
+      ).catch((err) => err);
+      if (resoult != "confirm") {
+        return this.$message.info("删除已取消！");
+      }
+
+      const { data: res } = await this.$http.post(`removeUser?id=${id}`);
+      if (res != "succeed") {
+        return this.$message.error("连接错误！删除失败！");
+      }
+      this.$message.success("用户删除成功！");
+      //刷新用户列表
+      this.getUserList();
+    },
+    selectUser(id) {
+      //ref: selectUser
+    },
+    //修改用户
+    modifyUser() {
+      //ref: modifyUser
     },
   },
 };

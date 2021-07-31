@@ -33,4 +33,33 @@
     <update id="modifyUserState">
         UPDATE easyuser SET state = #{state} WHERE id = #{id}
     </update>
+
+<!--    //添加用户-->
+<!--    public int addUser(@Param("user") User user);-->
+    <insert id="addUser" parameterType="com.xjh.springboot.pojo.User">
+        INSERT INTO easyuser (`username`,`password`,`email`,`role`,`state`)
+        VALUES (#{username},#{password},#{email},#{role},#{state})
+    </insert>
+
+<!--    //删除用户,根据用户id删除指定用户-->
+<!--    public int removeUser(int id);-->
+    <delete id="removeUser">
+        DELETE FROM easyuser WHERE `id` = #{id}
+    </delete>
+
+<!--    //修改用户信息-->
+<!--    //根据id获取用户信息-->
+<!--    public User getUserById(int id);-->
+    <select id="getUserById" parameterType="int" resultType="com.xjh.springboot.pojo.User">
+        SELECT * FROM easyuser WHERE `id` = #{id}
+    </select>
+<!--    //更新用户信息-->
+<!--    public int updateUser(User user);-->
+    <update id="updateUser" parameterType="com.xjh.springboot.pojo.User">
+        UPDATE easyuser set
+        `username` = #{username},
+        `password` = #{password},
+        `email` = #{email}
+         WHERE `id` = #{id}
+    </update>
 </mapper>
