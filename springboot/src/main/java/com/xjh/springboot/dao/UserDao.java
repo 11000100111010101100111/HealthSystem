@@ -26,6 +26,8 @@ public interface UserDao {
     public int modifyUserState(@Param("id") Integer id,@Param("state") Boolean state);
 
     //添加用户
+    //判断用户是否存在
+    public int hasUser(String username);
     public int addUser(User user);
 
     //删除用户,根据用户id删除指定用户

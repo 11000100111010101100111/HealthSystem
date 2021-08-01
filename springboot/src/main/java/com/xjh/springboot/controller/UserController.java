@@ -49,12 +49,20 @@ public class UserController {
     public String addUser(@RequestBody User user){
         System.out.println("请求添加用户："+user.toString());
 
-        user.setRole("普通用户");
-        user.setState(false);
-        int i = userDao.addUser(user);
-        String str = i>0 ? "succeed":"error";
+        String str="error";
 
-        System.out.println("添加"+(i>0?"成功！":"失败！"));
+        if(userDao.hasUser(user.getUsername()) == 0) {
+            user.setRole("普通用户");
+            user.setState(false);
+            int i = userDao.addUser(user);
+            str = i > 0 ? "succeed" : "error";
+
+            System.out.println("添加" + (i > 0 ? "成功！" : "失败！"));
+
+            return str;
+        }else{
+            str = "用户"+user.getUsername()+"已存在！";
+        }
         return str;
     }
 

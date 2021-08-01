@@ -1,0 +1,47 @@
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/myFile/springbootDemos/HealthSystem/.git/
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   springboot/src/main/java/com/xjh/springboot/controller/UserController.java
+        modified:   springboot/src/main/java/com/xjh/springboot/dao/UserDao.java
+        modified:   springboot/src/main/java/com/xjh/springboot/pojo/SubMenu.java
+        modified:   springboot/src/main/resources/mappers/UserMapping.xml
+        new file:   submitlog/9_push.txt
+        modified:   vueProject/firstboot/src/components/admin/UserList.vue
+
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git add .
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git commit -m "HeathSystem11thCommit_v1.0.11 addUser_modifyUser_andMore"
+[master 7c73fdf] HeathSystem11thCommit_v1.0.11 addUser_modifyUser_andMore
+ 6 files changed, 257 insertions(+), 4 deletions(-)
+ create mode 100644 submitlog/9_push.txt
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git push
+Enumerating objects: 50, done.
+Counting objects: 100% (50/50), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (26/26), 5.16 KiB | 659.00 KiB/s, done.
+Total 26 (delta 14), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (14/14), completed with 14 local objects.
+To https://github.com/11000100111010101100111/HealthSystem.git
+   f3d93ae..7c73fdf  master -> master
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$

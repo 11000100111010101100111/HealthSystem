@@ -35,6 +35,12 @@
     </update>
 
 <!--    //添加用户-->
+
+<!--    //判断用户是否存在-->
+<!--    public int hasUser(String username);-->
+    <select id="hasUser" parameterType="java.lang.String" resultType="int">
+        select count(*) from easyuser where `username` = #{username}
+    </select>
 <!--    public int addUser(@Param("user") User user);-->
     <insert id="addUser" parameterType="com.xjh.springboot.pojo.User">
         INSERT INTO easyuser (`username`,`password`,`email`,`role`,`state`)

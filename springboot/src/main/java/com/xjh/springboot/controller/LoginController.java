@@ -25,9 +25,14 @@ public class LoginController {
     public String login(@RequestBody User user){
         String flage = "error";
 
+        User item=null;
         System.out.println("==>用户登录:"+user.toString());
-        User item = userDao.getUserByMessage(user.getUsername(),user.getPassword());
-        System.out.println(item.toString());
+        try{
+            item = userDao.getUserByMessage(user.getUsername(),user.getPassword());}
+        catch(Exception e){
+            System.out.println("用户登录操作异常...");
+        }
+//        System.out.println(item.toString());
         if(item != null){
             flage = "ok";
         }

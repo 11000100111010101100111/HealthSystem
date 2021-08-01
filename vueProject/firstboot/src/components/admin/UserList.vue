@@ -118,6 +118,7 @@
       </div>
     </el-card>
 
+    <!-- 添加用户对话框 -->
     <el-dialog
       title="添加用户"
       :visible.sync="addDialogVisible"
@@ -148,6 +149,41 @@
         <el-button type="primary" @click="addUser">确定</el-button>
       </span>
     </el-dialog>
+
+    <!-- 修改用户信息对话框 -->
+    <el-dialog
+      title="修改用户信息"
+      :visible.sync="modifyDialogVisible"
+      width="50%"
+      @close="modifyDialogClose"
+    >
+      <el-form
+        :model="modifyUserForm"
+        :rules="modifyFormRules"
+        ref="modifyFormRef"
+        label-width="70px"
+      >
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model="modifyUserForm.username"></el-input>
+        </el-form-item>
+
+        <el-form-item label="密  码" prop="password">
+          <el-input
+            v-model="modifyUserForm.password"
+            type="password"
+          ></el-input>
+        </el-form-item>
+
+        <el-form-item label="邮  箱" prop="email">
+          <el-input v-model="modifyUserForm.email"></el-input>
+        </el-form-item>
+      </el-form>
+
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="modifyDialogVisible = false">取消</el-button>
+        <el-button type="primary" @click="modifyUser">确定修改</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -174,8 +210,31 @@ export default {
         password: "",
         email: "",
       },
-      //表单验证
+      //添加用户表单验证
       addFormRules: {
+        username: [
+          { required: true, message: "请输入您的名称...", tigger: "blur" },
+          { min: 2, max: 8, message: "名称由2到8个字符组成", tigger: "blur" },
+        ],
+        password: [
+          { required: true, message: "请输入您的密码...", tigger: "blur" },
+          { min: 6, max: 15, message: "名称由6到15个字符组成", tigger: "blur" },
+        ],
+        email: [
+          { required: true, message: "请输入您的邮箱...", tigger: "blur" },
+          { min: 5, max: 15, message: "请输入正确的邮箱...", tigger: "blur" },
+        ],
+      },
+      // 修改的用户信息
+      modifyUserForm: {
+        username: "",
+        password: "",
+        email: "",
+      },
+      //显示/隐藏修改用户信息表单
+      modifyDialogVisible: false,
+      //修改用户表单验证
+      modifyFormRules: {
         username: [
           { required: true, message: "请输入您的名称...", tigger: "blur" },
           { min: 2, max: 8, message: "名称由2到8个字符组成", tigger: "blur" },
@@ -230,8 +289,10 @@ export default {
           return this.$message.error("输入内容为空或输入不完整！无法提交！");
         }
         const { data: res } = await this.$http.post("addUser", this.addForm);
-        if (res != "succeed") {
+        if (res == "error") {
           return this.$message.error("连接错误！添加失败！");
+        } else if (res != "succeed") {
+          return this.$message.error("操作失败：" + res);
         }
         this.$message.success("用户添加成功！");
 
@@ -267,12 +328,41 @@ export default {
       //刷新用户列表
       this.getUserList();
     },
-    selectUser(id) {
+    async selectUser(id) {
       //ref: selectUser
+      // console.log("查询用户...");
+      const { data: res } = await this.$http.post(`selectUser?id=${id}`);
+      if (res.flage != "succeed") {
+        return this.$message.error("连接错误！");
+      }
+
+      this.modifyUserForm = res.user;
+      this.modifyDialogVisible = true;
+    },
+    modifyDialogClose() {
+      this.$refs.modifyFormRef.resetFields();
     },
     //修改用户
     modifyUser() {
       //ref: modifyUser
+      // console.log("修改用户...");
+      this.$refs.modifyFormRef.validate(async (valid) => {
+        if (!valid) {
+          return this.$message.error("输入内容为空或输入不完整！无法提交！");
+        }
+        const { data: res } = await this.$http.post(
+          "modifyUser",
+          this.modifyUserForm
+        );
+        if (res != "succeed") {
+          return this.$message.error("连接错误！信息修改失败！");
+        }
+        this.$message.success("用户信息修改成功！");
+
+        this.modifyDialogVisible = false;
+        //刷新用户列表
+        this.getUserList();
+      });
     },
   },
 };

@@ -52,7 +52,7 @@ export default {
       loginRules: {
         username: [
           { required: true, message: "请输入登录账号", trigger: "blur" },
-          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" },
+          { min: 2, max: 5, message: "长度在 2 到 5 个字符", trigger: "blur" },
         ],
         password: [
           { required: true, message: "请输入登录密码", trigger: "blur" },
@@ -92,21 +92,20 @@ export default {
         if (res.flage == "ok") {
           //存储当前登录的user对象
           window.sessionStorage.setItem("user", res.user);
+          this.$message.success("登录成功！");
 
           //跳转页面到主页,页面路由跳转
           this.$router.push({ path: "/home" });
 
           //返回结果为成功！
           this.$message.success(
-            "操作成功！欢迎登录，亲爱的：" +
-              res.user.role +
-              "-" +
-              res.user.username
+            "欢迎登录，亲爱的：" + res.user.role + "-" + res.user.username
           );
           console.log(res.user);
         } else {
           //错误提示
-          alert("登录失败了！");
+          // alert("登录失败了！");
+          this.$message.error("登录失败：账号或密码有误！");
         }
       });
     },
