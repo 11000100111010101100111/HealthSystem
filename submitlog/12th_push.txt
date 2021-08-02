@@ -1,0 +1,76 @@
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/xjhProjects/heathSystem/HealthSystem/.git/
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   database/database.html
+        modified:   database/mainmenu(data).PNG
+        modified:   database/mainmenu.PNG
+        modified:   database/submenu(data).PNG
+        modified:   database/submenu.PNG
+        modified:   springboot/src/main/java/com/xjh/springboot/controller/MenuController.java
+        modified:   springboot/src/main/java/com/xjh/springboot/pojo/MainMenu.java
+        modified:   springboot/src/main/java/com/xjh/springboot/pojo/SubMenu.java
+        modified:   springboot/src/main/resources/application.yml
+        modified:   springboot/src/main/resources/mappers/MenuMapper.xml
+        new file:   submitlog/9th_push.txt
+        modified:   vueProject/firstboot/src/assets/font/demo_index.html
+        modified:   vueProject/firstboot/src/assets/font/iconfont.css
+        modified:   vueProject/firstboot/src/assets/font/iconfont.js
+        modified:   vueProject/firstboot/src/assets/font/iconfont.json
+        modified:   vueProject/firstboot/src/assets/font/iconfont.ttf
+        modified:   vueProject/firstboot/src/assets/font/iconfont.woff
+        modified:   vueProject/firstboot/src/assets/font/iconfont.woff2
+        modified:   vueProject/firstboot/src/components/Home.vue
+        new file:   vueProject/firstboot/src/components/resources/Essay.vue
+        new file:   vueProject/firstboot/src/components/resources/Music.vue
+        new file:   vueProject/firstboot/src/components/resources/Picture.vue
+        new file:   vueProject/firstboot/src/components/resources/Vedio.vue
+        modified:   vueProject/firstboot/src/router/index.js
+
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git add .
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git commit -m "HeathSystemv1.0.12_12thM addtableCloum[font]forMenu-修改了导航 栏字体图标"
+[master 9a8653e] HeathSystemv1.0.12_12thM addtableCloum[font]forMenu-修改了导航栏字体图标
+ 24 files changed, 426 insertions(+), 31 deletions(-)
+ rewrite database/mainmenu(data).PNG (99%)
+ rewrite database/mainmenu.PNG (99%)
+ rewrite database/submenu(data).PNG (99%)
+ rewrite database/submenu.PNG (99%)
+ create mode 100644 submitlog/9th_push.txt
+ rewrite vueProject/firstboot/src/assets/font/iconfont.js (99%)
+ rewrite vueProject/firstboot/src/assets/font/iconfont.woff (96%)
+ rewrite vueProject/firstboot/src/assets/font/iconfont.woff2 (100%)
+ create mode 100644 vueProject/firstboot/src/components/resources/Essay.vue
+ create mode 100644 vueProject/firstboot/src/components/resources/Music.vue
+ create mode 100644 vueProject/firstboot/src/components/resources/Picture.vue
+ create mode 100644 vueProject/firstboot/src/components/resources/Vedio.vue
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push
+fatal: unable to access 'https://github.com/11000100111010101100111/HealthSystem.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git push
+Enumerating objects: 87, done.
+Counting objects: 100% (87/87), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (42/42), done.
+Writing objects: 100% (47/47), 141.38 KiB | 9.42 MiB/s, done.
+Total 47 (delta 20), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (20/20), completed with 19 local objects.
+To https://github.com/11000100111010101100111/HealthSystem.git
+   1ec4c44..9a8653e  master -> master
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$
