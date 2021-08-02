@@ -8,29 +8,42 @@ package com.xjh.springboot.pojo;
 // id ：编号
 // title ：菜单名称
 // path ：菜单地址
+// font :字体图标
 //====================
 //对应数据库表：submenu
 // id ：编号 int
 // title ：菜单名称 varchar(30)
 // path ：菜单地址 varchar(50)
 // mid  ：菜单主分支编号 int
+//font :字体图标 varchar(50)
 public class SubMenu {
     int id;
     String title;
     String path;
+    String font;
 
     public SubMenu() {
     }
 
-    public SubMenu(String title, String path) {
+    public SubMenu(String title, String path,String font) {
         this.title = title;
         this.path = path;
+        this.font = font;
     }
 
-    public SubMenu(int id, String title, String path) {
+    public SubMenu(int id, String title, String path,String font) {
         this.id = id;
         this.title = title;
         this.path = path;
+        this.font = font;
+    }
+
+    public String getFont() {
+        return font;
+    }
+
+    public void setFont(String font) {
+        this.font = font;
     }
 
     public int getId() {
@@ -63,13 +76,7 @@ public class SubMenu {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", path='" + path + '\'' +
+                ", font='" + font + '\'' +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        String s = "cdacadccc";
-        StringBuilder sd =new StringBuilder("");
-        StringBuffer sb = new StringBuffer("");
-        System.out.println(s.replaceAll("[a-z]","A"));
     }
 }

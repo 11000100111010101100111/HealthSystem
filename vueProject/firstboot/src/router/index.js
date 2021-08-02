@@ -5,12 +5,19 @@ import Login from '../components/login.vue'
 import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
 import UserList from '../components/admin/UserList.vue'
+
 import Rights from '../components/admin/Rights.vue'
 import Sport from '../components/admin/Sport.vue'
 import Goods from '../components/admin/Goods.vue'
+
 import Introduction from '../components/use/Introduction.vue'
 import Calories from '../components/use/Calories.vue'
 import Food from '../components/use/Food.vue'
+
+import Essay from '../components/resources/Essay.vue'
+import Music from '../components/resources/Music.vue'
+import Picture from '../components/resources/Picture.vue'
+import Vedio from '../components/resources/Vedio.vue'
 
 Vue.use(VueRouter)
 
@@ -67,6 +74,23 @@ const routes = [
       {
         path:"/food",
         component:Food
+      },
+      //资源专区
+      {
+        path:"/vedio",
+        component:Vedio
+      },
+      {
+        path:"/music",
+        component:Music
+      },
+      {
+        path:"/picture",
+        component:Picture
+      },
+      {
+        path:"/essay",
+        component:Essay
       },
     ]
   },

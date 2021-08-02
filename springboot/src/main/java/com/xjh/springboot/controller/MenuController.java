@@ -28,6 +28,9 @@ public class MenuController {
         if (menuList != null){
             status = 200;
             menus.put("menus",menuList);
+            for (MainMenu mainMenu : menuList) {
+                System.out.println(mainMenu.toString());
+            }
             System.out.println("查询菜单列表成功！");
         }
         menus.put("status",status);

@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14681556",
+      "name": "音频播放",
+      "font_class": "music",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "827977",
+      "name": "文章1",
+      "font_class": "essay",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "4408997",
+      "name": "运动",
+      "font_class": "use",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "14666248",
+      "name": "媒体资源库",
+      "font_class": "resources",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "14843441",
+      "name": "权限",
+      "font_class": "admin",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "22177586",
+      "name": "图 片",
+      "font_class": "picture",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "22288778",
+      "name": "视频共享融合赋能平台",
+      "font_class": "vedio",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
       "icon_id": "8311060",
       "name": "健康",
       "font_class": "jiankang",

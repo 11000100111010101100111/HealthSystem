@@ -36,7 +36,7 @@
             :key="item.id"
           >
             <template slot="title">
-              <i class="iconfont icon-Data_center"></i>
+              <i class="iconfont" :class="item.font"></i>
               <span>{{ item.title }}</span>
             </template>
 
@@ -48,7 +48,7 @@
               @click="setPath(it.path)"
             >
               <template slot="title">
-                <i class="iconfont icon-yundong1"></i>
+                <i class="iconfont " :class="it.font"></i>
                 <span>{{ it.title }}</span>
               </template>
             </el-menu-item>
