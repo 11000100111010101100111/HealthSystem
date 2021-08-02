@@ -1,5 +1,7 @@
 #mysql
 spring:
+  mvc:
+    static-path-pattern: /static/**
   servlet:
     multipart: #设置文件最大上传大小1GB
       max-file-size: 1GB

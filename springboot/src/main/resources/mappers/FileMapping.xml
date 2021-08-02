@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjh.springboot.dao.FileDao">
+
+<!--    //判断这个文件名称是否存在-->
+<!--    public int hasFileByName(String name);-->
+    <select id="hasFileByName" resultType="int">
+        select count(*) from easyfile where `name` = #{name}
+    </select>
+<!--    //上传文件-->
+<!--    public int uploadFile(File file);-->
+    <insert id="uploadFile">
+        insert into easyfile (`name`,`path`,`description`,`uid`,`uploadtime`)
+         values
+          (#{name},#{path},#{description},#{uid},#{uploadtime})
+    </insert>
+
+<!--    //文件被浏览一次-->
+<!--    public int download(Long id);-->
+    <update id="download">
+        update easyfile set downloadtimes = downloadtimes+1 where id = #{id}
+    </update>
+
+<!--    //文件被点赞一次-->
+<!--    public int browseFile(Long id);-->
+    <update id="browseFile">
+        update easyfile set browsetimes = browsetimes+1 where id = #{id}
+    </update>
+
+<!--    //查找文件-->
+<!--    public List<String> findFile(String key);-->
+    <select id="findFile" resultType="java.lang.String" parameterType="java.lang.String">
+        select `path` from easyfile where `name` like concat('%',#{key},'%') or `description` like concat('%',#{key},'%')
+    </select>
+
+</mapper>

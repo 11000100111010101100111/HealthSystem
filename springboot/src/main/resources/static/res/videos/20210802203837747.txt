@@ -1,0 +1,4 @@
+Student{stuId=1, name='张三', age=20, pay=230.0, birthday=2001-06-13, sex=true}
+Student{stuId=2, name='李四', age=21, pay=336.25, birthday=2000-06-08, sex=true}
+Student{stuId=3, name='王五', age=22, pay=600.35, birthday=1999-11-25, sex=false}
+Student{stuId=4, name='赵六', age=23, pay=6002.5, birthday=1998-08-14, sex=true}
