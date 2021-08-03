@@ -1,5 +1,6 @@
 package com.xjh.springboot.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.xjh.springboot.dao.FileDao;
 import com.xjh.springboot.pojo.File;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 @RestController
 public class UploadFileController {
@@ -20,8 +23,8 @@ public class UploadFileController {
     @Resource(name = "fileDao")
     FileDao fileDao;
 
-    @RequestMapping("/uploadVideo")
-    public String uploadVideo(@RequestParam("file")MultipartFile file,@RequestParam("file") File f){
+    @RequestMapping("/uploadfile")
+    public String uploadfile(@RequestParam("file")MultipartFile file,@RequestParam("file") File f){
         OutputStream out = null;
         String flag = "error";
         if(file.isEmpty()){
@@ -74,7 +77,18 @@ public class UploadFileController {
     @RequestMapping("/getVideo")
     public String getViedo(String key){
         //返回数据库对应视频地址（地址存储在数据库中）
+        List<String> files = null;
+        String flag = "error";
+        try {
+            files = fileDao.findFile(key);
+            flag = "succeed";
+        }catch (Exception e){
 
-        return "succeed";
+        }
+        HashMap<String,Object> res = new HashMap<String ,Object>();
+        res.put("res",files);
+        res.put("flag",flag);
+        String val = JSON.toJSONString(res);
+        return val;
     }
 }
