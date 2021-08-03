@@ -4,8 +4,8 @@ spring:
     static-path-pattern: /static/**
   servlet:
     multipart: #设置文件最大上传大小1GB
-      max-file-size: 1GB
-      max-request-size: 1GB
+      max-file-size: 100MB
+      max-request-size: 100MB
   datasource:
     #mysql配置
     driverClassName: com.mysql.cj.jdbc.Driver

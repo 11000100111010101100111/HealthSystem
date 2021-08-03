@@ -24,7 +24,10 @@ public class UploadFileController {
     FileDao fileDao;
 
     @RequestMapping("/uploadfile")
-    public String uploadfile(@RequestParam("file")MultipartFile file,@RequestParam("file") File f){
+    public String uploadfile(@RequestParam MultipartFile file , File f){
+//        File f = new File();
+//        f.setName("123.mp4");
+//        f.setDescription("shiping");
         OutputStream out = null;
         String flag = "error";
         if(file.isEmpty()){
@@ -35,7 +38,7 @@ public class UploadFileController {
             return "hasFile";
         }
         String videoPath = file.getName();
-        String off = videoPath.substring(videoPath.lastIndexOf('.'));
+        String off = ".mp4" ;//videoPath.substring(videoPath.lastIndexOf('.'));
         try {
             byte[] bytes = file.getBytes();
 
@@ -55,13 +58,16 @@ public class UploadFileController {
 
 
 
-            f.setPath("http://localhost:9000/res/videos/static/"+f.getUid()+"_"+filename+off);
+//            f.setPath("http://localhost:9000/static/res/videos/"+f.getUid()+"_"+filename+off);
+//            http://localhost:9000/videos/
+            f.setPath("http://localhost:9000/videos/"+f.getUid()+"_"+filename+off);
             java.sql.Date datesql = new java.sql.Date(new Date().getTime());
             f.setUploadtime(datesql);
 
             fileDao.uploadFile(f);//保存到数据库
 
             flag = "succeed";
+            System.out.println("======》上传成功");
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
