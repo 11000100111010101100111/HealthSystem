@@ -18,7 +18,6 @@ import axios from 'axios'
   // 设置默认访问路径,springboot后端访问路径
   axios.defaults.baseURL="http://localhost:9000"
 
-
 Vue.config.productionTip = false
 
 new Vue({

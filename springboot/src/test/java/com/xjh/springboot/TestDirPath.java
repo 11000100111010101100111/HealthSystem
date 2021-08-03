@@ -15,41 +15,51 @@ public class TestDirPath {
     }
     @Test
     public void uploadVideo(){
-        String viedoPath= "D:\\xjhProjects\\javaSEProjectByIdea\\stuTxt.txt";
-        File f = new File(viedoPath);
-        String off = viedoPath.substring(viedoPath.lastIndexOf('.'));
-        OutputStream out = null;
-//        String flag = "error";
-//        if(file.isEmpty()){
-//            return "null";
-//            System.out.println("null");
+//        String viedoPath= "D:\\xjhProjects\\javaSEProjectByIdea\\stuTxt.txt";
+//        File f = new File(viedoPath);
+//        String off = viedoPath.substring(viedoPath.lastIndexOf('.'));
+//        OutputStream out = null;
+////        String flag = "error";
+////        if(file.isEmpty()){
+////            return "null";
+////            System.out.println("null");
+////        }
+//        FileInputStream file = null;
+//        try {
+//            file = new FileInputStream(f);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
 //        }
-        FileInputStream file = null;
-        try {
-            file = new FileInputStream(f);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            byte[] bytes = file.readAllBytes();
-            String path = System.getProperty("user.dir");
-            SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHHmmssSS");
-            Date date = new Date();
-            String filename = sf.format(date);
-            path = path + "/src/main/resources/static/res/videos/" + filename + off;
-            out = new FileOutputStream(path);
-            out.write(bytes);
-//            flag = "succeed";
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                out.flush();
-                out.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        try {
+//            byte[] bytes = file.readAllBytes();
+//            String path = System.getProperty("user.dir");
+//            SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHHmmssSS");
+//            Date date = new Date();
+//            String filename = sf.format(date);
+//            path = path + "/src/main/resources/static/res/videos/" + filename + off;
+//            out = new FileOutputStream(path);
+//            out.write(bytes);
+////            flag = "succeed";
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }finally {
+//            try {
+//                out.flush();
+//                out.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
 //        return flag;
+    }
+    @Test
+    public void time(){
+        SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHHmmssSS");
+
+        Date dtUitl = new Date();
+        java.sql.Date date = new java.sql.Date(dtUitl.getTime());
+
+        String filename = sf.format(date);
+        System.out.println(filename);
     }
 }

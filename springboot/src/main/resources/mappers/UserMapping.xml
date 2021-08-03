@@ -68,4 +68,10 @@
         `email` = #{email}
          WHERE `id` = #{id}
     </update>
+
+<!--    //根据用户姓名查找用户id-->
+<!--    public int findUidByName(int name);-->
+    <select id="" resultType="int">
+        select `id` from easyuser where UPDATE `username` = #{username}
+    </select>
 </mapper>

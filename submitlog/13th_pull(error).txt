@@ -1,0 +1,66 @@
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull
+error: Your local changes to the following files would be overwritten by merge:
+        springboot/src/main/resources/application.yml
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 1ec4c44..f13fcc2
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git reset --hard
+HEAD is now at 1ec4c44 pushOncePushLogAs11thPush
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$ git pull
+Updating 1ec4c44..f13fcc2
+Fast-forward
+ database/database.html                             |  22 +--
+ database/easyfile.PNG                              | Bin 0 -> 23864 bytes
+ database/mainmenu(data).PNG                        | Bin 26116 -> 7562 bytes
+ database/mainmenu.PNG                              | Bin 64264 -> 39137 bytes
+ database/submenu(data).PNG                         | Bin 28873 -> 27617 bytes
+ database/submenu.PNG                               | Bin 46357 -> 54056 bytes
+ springboot/pom.xml                                 |   8 +
+ .../xjh/springboot/controller/MenuController.java  |   3 +
+ .../controller/UploadFileController.java           |  80 ++++++++++
+ .../main/java/com/xjh/springboot/dao/FileDao.java  |  21 +++
+ .../main/java/com/xjh/springboot/pojo/File.java    |  91 +++++++++++
+ .../java/com/xjh/springboot/pojo/MainMenu.java     |  15 +-
+ .../main/java/com/xjh/springboot/pojo/SubMenu.java |  25 +--
+ springboot/src/main/resources/application.yml      |   8 +-
+ .../src/main/resources/mappers/FileMapping.xml     |  37 +++++
+ .../src/main/resources/mappers/MenuMapper.xml      |   4 +-
+ .../static/res/videos/20210802203837747.txt        |   4 +
+ .../test/java/com/xjh/springboot/TestDirPath.java  |  55 +++++++
+ submitlog/12th_push.txt                            |  76 ++++++++++
+ submitlog/9th_push.txt                             |  50 ++++++
+ .../firstboot/src/assets/font/demo_index.html      | 167 ++++++++++++++++++++-
+ vueProject/firstboot/src/assets/font/iconfont.css  |  34 ++++-
+ vueProject/firstboot/src/assets/font/iconfont.js   |   2 +-
+ vueProject/firstboot/src/assets/font/iconfont.json |  49 ++++++
+ vueProject/firstboot/src/assets/font/iconfont.ttf  | Bin 7860 -> 9924 bytes
+ vueProject/firstboot/src/assets/font/iconfont.woff | Bin 5124 -> 6512 bytes
+ .../firstboot/src/assets/font/iconfont.woff2       | Bin 4420 -> 5716 bytes
+ vueProject/firstboot/src/components/Home.vue       |   4 +-
+ .../firstboot/src/components/resources/Essay.vue   |  13 ++
+ .../firstboot/src/components/resources/Music.vue   |  13 ++
+ .../firstboot/src/components/resources/Picture.vue |  13 ++
+ .../firstboot/src/components/resources/Vedio.vue   |  13 ++
+ vueProject/firstboot/src/router/index.js           |  24 +++
+ 33 files changed, 800 insertions(+), 31 deletions(-)
+ create mode 100644 database/easyfile.PNG
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/controller/UploadFileController.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/dao/FileDao.java
+ create mode 100644 springboot/src/main/java/com/xjh/springboot/pojo/File.java
+ create mode 100644 springboot/src/main/resources/mappers/FileMapping.xml
+ create mode 100644 springboot/src/main/resources/static/res/videos/20210802203837747.txt
+ create mode 100644 springboot/src/test/java/com/xjh/springboot/TestDirPath.java
+ create mode 100644 submitlog/12th_push.txt
+ create mode 100644 submitlog/9th_push.txt
+ create mode 100644 vueProject/firstboot/src/components/resources/Essay.vue
+ create mode 100644 vueProject/firstboot/src/components/resources/Music.vue
+ create mode 100644 vueProject/firstboot/src/components/resources/Picture.vue
+ create mode 100644 vueProject/firstboot/src/components/resources/Vedio.vue
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/springbootDemos/HealthSystem (master)
+$

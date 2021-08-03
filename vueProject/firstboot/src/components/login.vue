@@ -90,10 +90,12 @@ export default {
         const { data: res } = await this.$http.post("login", this.loginForm); //异步访问后台
         console.log(res);
         if (res.flage == "ok") {
+          console.log(res.user);
           //存储当前登录的user对象
           window.sessionStorage.setItem("user", res.user);
-          this.$message.success("登录成功！");
 
+          this.$message.success("登录成功！");
+          console.log(window.sessionStorage.getItem("user"));
           //跳转页面到主页,页面路由跳转
           this.$router.push({ path: "/home" });
 

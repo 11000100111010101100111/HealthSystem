@@ -3,6 +3,7 @@ package com.xjh.springboot.controller;
 import com.alibaba.fastjson.JSON;
 import com.xjh.springboot.dao.FileDao;
 import com.xjh.springboot.pojo.File;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,11 +24,14 @@ public class UploadFileController {
     @Resource(name = "fileDao")
     FileDao fileDao;
 
+    @CrossOrigin
     @RequestMapping("/uploadfile")
-    public String uploadfile(@RequestParam MultipartFile file , File f){
-//        File f = new File();
-//        f.setName("123.mp4");
-//        f.setDescription("shiping");
+    public String uploadfile(@RequestParam MultipartFile file ,@RequestParam String name,@RequestParam String uid,@RequestParam String description){
+        File f = new File();
+        f.setName(name);
+        f.setDescription(description);
+        f.setUid(Integer.parseInt(uid));
+
         OutputStream out = null;
         String flag = "error";
         if(file.isEmpty()){
@@ -46,23 +50,21 @@ public class UploadFileController {
 
             SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHHmmssSS");
 
-            Date date = new Date();
-            String filename = sf.format(date);
-//            path = path + "/../webapps/assets/res/videos/" + filename;
+            Date dtUitl = new Date();
+
+            String filename = sf.format(dtUitl);
 
             path.append("/src/main/resources/static/res/videos/").append(f.getUid()).append("_").append(filename).append(off);
 
             out = new FileOutputStream(path.toString());
 
             out.write(bytes);
-
-
-
-//            f.setPath("http://localhost:9000/static/res/videos/"+f.getUid()+"_"+filename+off);
+            
 //            http://localhost:9000/videos/
             f.setPath("http://localhost:9000/videos/"+f.getUid()+"_"+filename+off);
-            java.sql.Date datesql = new java.sql.Date(new Date().getTime());
-            f.setUploadtime(datesql);
+
+
+            f.setUploadtime(dtUitl);
 
             fileDao.uploadFile(f);//保存到数据库
 
@@ -80,6 +82,8 @@ public class UploadFileController {
         }
         return flag;
     }
+
+    @CrossOrigin
     @RequestMapping("/getVideo")
     public String getViedo(String key){
         //返回数据库对应视频地址（地址存储在数据库中）

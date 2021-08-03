@@ -1,6 +1,8 @@
 package com.xjh.springboot.pojo;
 
-import java.sql.Date;
+//import java.sql.Date;
+
+import java.util.Date;
 
 public class File {
     Long id;//文件编号

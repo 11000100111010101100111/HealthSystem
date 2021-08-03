@@ -38,4 +38,7 @@ public interface UserDao {
     public User getUserById(int id);
     //更新用户信息
     public int updateUser(User user);
+
+    //根据用户姓名查找用户id
+    public int findUidByName(String username);
 }

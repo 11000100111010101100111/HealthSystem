@@ -17,6 +17,7 @@ public class UserController {
     @Resource(name = "userDao")
     UserDao userDao;
 
+    @CrossOrigin
     @RequestMapping("/allUser")
     public String getUserList(QueryInfo queryInfo){
 //        String name,int pageStart,int pageSize
@@ -38,6 +39,7 @@ public class UserController {
 
         return val;
     }
+    @CrossOrigin
     @RequestMapping("/changeState")
     public String modifyUserState(@RequestParam("id")Integer id,@RequestParam("state") Boolean state){
 
@@ -45,6 +47,7 @@ public class UserController {
         return res>0?"succeed":"error";
     }
 
+    @CrossOrigin
     @RequestMapping("/addUser")
     public String addUser(@RequestBody User user){
         System.out.println("请求添加用户："+user.toString());
@@ -66,6 +69,7 @@ public class UserController {
         return str;
     }
 
+    @CrossOrigin
     @RequestMapping("/removeUser")
     public String removeUser(int id){
 //        int res = userDao.removeUser(id);
@@ -74,6 +78,7 @@ public class UserController {
         return userDao.removeUser(id)>0?"succeed":"error";
     }
 
+    @CrossOrigin
     @RequestMapping("/selectUser")
     public String selectUser(int id){
         HashMap<String,Object> list = new HashMap<String,Object>();
@@ -87,6 +92,7 @@ public class UserController {
         }
         return JSON.toJSONString(list);
     }
+    @CrossOrigin
     @RequestMapping("/modifyUser")
     public String modifyUser(@RequestBody User user){
         int flage =0;
@@ -96,5 +102,20 @@ public class UserController {
             flage = -1;
         }
         return flage>0?"succeed":"error";
+    }
+
+    @CrossOrigin
+    @RequestMapping("/getUid")
+    public String getUid(String username){
+        HashMap<String ,Object> val = new HashMap<String,Object>();
+        try {
+            int id = userDao.findUidByName(username);
+            val.put("id",id);
+            val.put("flag","succed");
+        }catch (Exception e){
+            System.out.println("======"+username);
+            val.put("flag","error");
+        }
+        return JSON.toJSONString(val);
     }
 }

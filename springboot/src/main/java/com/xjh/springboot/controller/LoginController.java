@@ -28,7 +28,9 @@ public class LoginController {
         User item=null;
         System.out.println("==>用户登录:"+user.toString());
         try{
-            item = userDao.getUserByMessage(user.getUsername(),user.getPassword());}
+            item = userDao.getUserByMessage(user.getUsername(),user.getPassword());
+            System.out.println(item.toString());
+        }
         catch(Exception e){
             System.out.println("用户登录操作异常...");
         }

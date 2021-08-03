@@ -48,7 +48,7 @@
               @click="setPath(it.path)"
             >
               <template slot="title">
-                <i class="iconfont " :class="it.font"></i>
+                <i class="iconfont" :class="it.font"></i>
                 <span>{{ it.title }}</span>
               </template>
             </el-menu-item>
@@ -57,12 +57,9 @@
       </el-aside>
 
       <!-- 右边信息面板 -->
-      <el-main> 
-        <router-view>
-          
-        </router-view>    
+      <el-main>
+        <router-view> </router-view>
       </el-main>
-
     </el-container>
   </el-container>
 </template>
@@ -74,7 +71,7 @@ export default {
       // 返回一级菜单列表
       menuList: [],
       isCollapse: true, //伸缩属性
-      activePath: '/welcome',//默认路径路由
+      activePath: "/welcome", //默认路径路由
     };
   },
   // 等同onload(),页面加载时发生
@@ -112,9 +109,9 @@ export default {
       this.isCollapse = !this.isCollapse;
     },
     // 更改路由路径,保存当前路径
-    setPath(path){
+    setPath(path) {
       // 将路径暂存到session
-      window.sessionStorage.setItem("activePath",path);
+      window.sessionStorage.setItem("activePath", path);
 
       this.activePath = path;
     },
