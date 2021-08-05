@@ -32,6 +32,8 @@ public class UploadFileController {
         f.setDescription(description);
         f.setUid(Integer.parseInt(uid));
 
+        System.out.println(file.getName()+"=="+file.getOriginalFilename()+"=="+file.getContentType());
+
         OutputStream out = null;
         String flag = "error";
         if(file.isEmpty()){

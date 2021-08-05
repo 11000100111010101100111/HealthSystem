@@ -68,6 +68,9 @@ export default {
   },
   methods: {
     async upload() {
+      // if(this.fileList.length<=0){
+      //   return this.$message.error("请先选择一个视频！");
+      // }
       this.uploadDialogVisible = false;
       // const uname = window.sessionStorage.getItem("user");
       // console.log("[" + uname + "]");
@@ -88,11 +91,15 @@ export default {
       // console.log(val);
     },
     submitUpload() {
+      //  if(this.fileList.length<=0){
+      //   return this.$message.error("请先选择一个视频！");
+      // }
       // this.$refs.upload.submit();
       this.uploadDialogVisible = true;
     },
     handleRemove(file, fileList) {
       console.log(file, fileList);
+      return this.$message.success("移除成功！");
     },
     handlePreview(file) {
       console.log(file);

@@ -1,0 +1,51 @@
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git init
+Reinitialized existing Git repository in D:/xjhProjects/heathSystem/HealthSystem/.git/
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$ git pull
+remote: Enumerating objects: 86, done.
+remote: Counting objects: 100% (86/86), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 49 (delta 19), reused 49 (delta 19), pack-reused 0
+Unpacking objects: 100% (49/49), 14.58 MiB | 649.00 KiB/s, done.
+From https://github.com/11000100111010101100111/HealthSystem
+   ad52ba2..9824f41  master     -> origin/master
+Updating ad52ba2..9824f41
+Fast-forward
+ database/easyfile(data).PNG                        | Bin 0 -> 113245 bytes
+ .../xjh/springboot/controller/LoginController.java |   4 +-
+ .../xjh/springboot/controller/MenuController.java  |   2 +
+ .../controller/UploadFileController.java           |  30 +++--
+ .../xjh/springboot/controller/UserController.java  |  21 +++
+ .../main/java/com/xjh/springboot/dao/UserDao.java  |   3 +
+ .../main/java/com/xjh/springboot/pojo/File.java    |   4 +-
+ springboot/src/main/resources/application.yml      |   2 +-
+ springboot/src/main/resources/banner.txt           |  20 +++
+ .../src/main/resources/mappers/UserMapping.xml     |   6 +
+ .../static/res/videos/10_20210804001723890.mp4     | Bin 0 -> 10829922 bytes
+ .../static/res/videos/10_20210804001847551.mp4     | Bin 0 -> 912179 bytes
+ .../static/res/videos/10_20210804002501890.mp4     | Bin 0 -> 10829922 bytes
+ .../static/res/videos/10_20210804002730472.mp4     | Bin 0 -> 1117808 bytes
+ .../static/res/videos/10_20210804003109876.mp4     | Bin 0 -> 2391685 bytes
+ .../static/res/videos/20210802203837747.txt        |   4 -
+ .../test/java/com/xjh/springboot/TestDirPath.java  |  78 ++++++-----
+ submitlog/13th_pull(error).txt                     |  66 ++++++++++
+ vueProject/firstboot/src/components/Home.vue       |  15 +--
+ vueProject/firstboot/src/components/login.vue      |   4 +-
+ .../firstboot/src/components/resources/Vedio.vue   | 146 ++++++++++++---------
+ vueProject/firstboot/src/main.js                   |   1 -
+ 22 files changed, 276 insertions(+), 130 deletions(-)
+ create mode 100644 database/easyfile(data).PNG
+ create mode 100644 springboot/src/main/resources/banner.txt
+ create mode 100644 springboot/src/main/resources/static/res/videos/10_20210804001723890.mp4
+ create mode 100644 springboot/src/main/resources/static/res/videos/10_20210804001847551.mp4
+ create mode 100644 springboot/src/main/resources/static/res/videos/10_20210804002501890.mp4
+ create mode 100644 springboot/src/main/resources/static/res/videos/10_20210804002730472.mp4
+ create mode 100644 springboot/src/main/resources/static/res/videos/10_20210804003109876.mp4
+ delete mode 100644 springboot/src/main/resources/static/res/videos/20210802203837747.txt
+ create mode 100644 submitlog/13th_pull(error).txt
+
+Administrator@3-1-202 MINGW32 /d/xjhProjects/heathSystem/HealthSystem (master)
+$
